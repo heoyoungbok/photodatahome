@@ -20,8 +20,7 @@
         <beans:property name="suffix" value=".jsp" />
 
     </beans:bean>
-    <!-- NaverLoginController Class에 대한 Bean설정 추가 -->
-<!--    <bean class="controller.NaverController" />-->
+
 
 
     <!-- 프로젝트 패키지이름 확인 -->
