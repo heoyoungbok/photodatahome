@@ -48,12 +48,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 //@Controller
 //
 @Controller
-//@Log4j
-
 @AllArgsConstructor
 public class KakaoController {
 
     private KakaoService kakaoService;
+
+ }
+
+
+
 //    @RequestMapping("/login")
 //    public String home(@RequestParam(value = "code", required = false) String code) throws Exception{
 //        System.out.println("#########" + code);
@@ -121,6 +124,6 @@ public class KakaoController {
 //        return "logout";
 //    }
 
-}
+
 
 

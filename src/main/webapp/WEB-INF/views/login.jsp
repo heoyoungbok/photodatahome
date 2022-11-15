@@ -16,44 +16,19 @@
 
 </head>
 <body>
-<a href="#0" id="kakaoLogout">로그아웃</a> |
-<a href="#0" id="secession">탈퇴</a>
-<script src="https://developers.kakao.com/sdk/js/kakao.js"></script>
+<!-- 카카오 로그인 -->
+<%--<a class="p-2" href="https://kauth.kakao.com/oauth/authorize?client_id=20f88d6bd6aba3224d8eddf828f928fa&redirect_uri=--%>
+<%--http://localhost:8080/login&response_type=code">--%>
+<%--    <!-- REST_API키 및 REDIRECT_URi는 본인걸로 수정하세요 -->--%>
+<%--    <!-- 저는 redirect_uri을 http://localhost:8080/member/kakaoLogin로 했습니다. -->--%>
+<%--    <!-- 본인걸로 수정 시 띄어쓰기 절대 하지 마세요. 오류납니다. -->--%>
+
+<%--    <img src="/resources/icon/kakao_login_large_narrow.png" style="height:60px">--%>
+    <!-- 이미지는 카카오 개발자센터에서 제공하는 login 이미지를 사용했습니다. -->
+
+<%--</a>--%>
 <script>
-    window.Kakao.init('20f88d6bd6aba3224d8eddf828f928fa');
-    window.Kakao.Auth.setAccessToken(JSON.parse(sessionStorage.getItem('AccessKEY'))); //sessionStorage에 저장된 사용자 엑세스 토큰 받아온다.
 
-    function kakaoLogout() {
-        if (!Kakao.Auth.getAccessToken()) {
-            console.log('Not logged in.');
-            return;
-        }
-        Kakao.Auth.logout(function(response) {
-            alert(response +' logout');
-            window.location.href='/'
-        });
-    };
-
-    function secession() {
-        Kakao.API.request({
-            url: '/v1/user/unlink',
-            success: function(response) {
-                console.log(response);
-                //callback(); //연결끊기(탈퇴)성공시 서버에서 처리할 함수
-                window.location.href='/'
-            },
-            fail: function(error) {
-                console.log('탈퇴 미완료')
-                console.log(error);
-            },
-        });
-    };
-
-    const logout = document.querySelector('#kakaoLogout');
-    const sion = document.querySelector('#secession');
-
-    logout.addEventListener('click', kakaoLogout);
-    sion.addEventListener('click', secession);
 </script>
 <%--<a href="https://kauth.kakao.com/oauth/authorize--%>
 <%--    ?client_id=20f88d6bd6aba3224d8eddf828f928fa--%>
